@@ -1,0 +1,25 @@
+{
+  "short_name": "Marvel",
+  "name": "Marvel Comics",
+  "icons": [
+    {
+      "src": "favicon64px.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "marvel256px.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "marvel512px.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,120 @@
+@import '../../../../scss/vars';
+
+.ironman-fly {
+  position: relative;
+  width: 140%;
+  height: 120vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #052238;
+
+ &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #052238, transparent);
+    z-index: 2;
+  }
+
+  &__text-holder {
+    position: relative;
+    padding: 0 50px;
+    height: auto;
+    background: #052238;
+  }
+
+  &__content {
+    padding-bottom: 50px;
+  }
+
+  &__content h2 {
+    font-size: $titleh1;
+    color: $white;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+#bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110%;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#moon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+}
+
+#cloud1 {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  max-width: 600px;
+}
+
+#cloud2 {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  max-width: 600px;
+}
+
+#jet {
+  position: absolute;
+  left: 150px;
+  top: 50px;
+  max-width: 100%;
+  transform: scale(0);
+}
+
+#ironman {
+  position: absolute;
+  top: 110%;
+  left: 10%;
+  z-index: 1;
+  transform: scale(0);
+}
+
+#text {
+  color: $white;
+  padding: 15px;
+}
+
+@media (max-width: 1024px) {
+.ironman-fly{
+  height: 60vh;
+}
+
+  #jet{
+    left:0;
+    width: 40%;
+   
+  }
+
+  #ironman {
+      height: 50%;
+      left: 12%;
+  }
+
+  #cloud1{
+    left: 15%;
+    width: 300px;
+  }
+
+  #cloud2{
+    right: 15%;
+    width: 300px;
+  }
+
+}

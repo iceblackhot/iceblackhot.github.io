@@ -1,0 +1,95 @@
+@import '../../../../../scss/vars.scss';
+
+.avg {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $blackJack;
+  padding-bottom: 50px;
+
+  &:hover .avg__screen {
+    opacity: 0.1;
+  }
+
+  &__title {
+    width: 100%;
+    height: 50px;
+    color: $white;
+    padding: 15px;
+    text-align: center;
+  }
+
+  &__screen {
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    flex-grow: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: 1s;
+    background-size: cover;
+    margin: 0 20px;
+
+    &:hover .avg__content {
+      transform: translateX(0);
+      transition-delay: 1s;
+    }
+  }
+
+  &__screen:nth-child(1) {
+    background-image: url('../../../../assets/imagesAvg/ironman.jpg');
+
+    &:hover {
+      flex-grow: 5;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &__screen:nth-child(2) {
+    background-image: url('../../../../assets/imagesAvg/cap.png');
+    &:hover {
+      flex-grow: 5;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &__screen:nth-child(3) {
+    background-image: url('../../../../assets/imagesAvg/thor.jpg');
+    &:hover {
+      flex-grow: 5;
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $grey;
+    color: $blackJack;
+    width: 300px;
+    padding: 25px;
+    transform: translateX(100%);
+    transition: transform 0.5s;
+    text-align: justify;
+
+    & h2 {
+      text-transform: uppercase;
+      margin: 0;
+      font-size: 30px;
+      color: #ed363a;
+      padding: 15px;
+    }
+
+    & p {
+      color: $white;
+    }
+  }
+}

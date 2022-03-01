@@ -1,0 +1,35 @@
+@import '../../../../scss/vars.scss';
+
+.button-up {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 10%;
+  background-color: $blue;
+  z-index: 10;
+  transform: translateY(0);
+  transition: all ease-in-out 0.6s;
+  cursor: pointer;
+  border: 2px solid $white;
+
+  &_hidden {
+    transform: translateY(500px);
+  }
+
+  &:hover {
+    background: $blackJack;
+    transform: scale(1.1);
+    
+  }
+
+  &__arrow {
+    position: absolute;
+    font-size: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $white;
+  }
+}

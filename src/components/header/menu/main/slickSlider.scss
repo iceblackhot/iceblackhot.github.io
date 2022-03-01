@@ -1,0 +1,45 @@
+@import '../../../../scss/vars';
+.avangers-slider {
+  padding-bottom: 35px;
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: $marvel;
+    font-size: 30px;
+  }
+
+  .avangers-slider__holder {
+    padding-top: 0;
+  }
+
+  .slick-prev {
+    left: -7px;
+    z-index: 1;
+  }
+
+  .slick-next {
+    right: 2px;
+    z-index: 1;
+  }
+
+  .slick-dots li button:before {
+    padding: 15px;
+    font-size: 25px;
+    color: rgb(54, 54, 167);
+  }
+
+  &__holder {
+    padding: 25px;
+  }
+
+  &__title-holder {
+    text-align: center;
+    font-size: $titleh1;
+    color: $white;
+    padding: 15px 15px 30px;
+  }
+
+  &__img-holder {
+    padding: 0 10px;
+  }
+}
