@@ -6,12 +6,12 @@
 }
 
 @media (max-width: 768px) {
-  .marvel__header {
+  .marvel-header {
     .marvel__btn-burger {
       display: block;
       visibility: visible;
       position: absolute;
-      top: 1.6em;
+      top: 2.3em;
       right: 2em;
       width: 50px;
       height: 20px;
@@ -58,13 +58,13 @@
 
 //Animation burger btn
 @media (max-width: 768px) {
-  .marvel__header .active span {
+  .marvel-header .active span {
     top: 7px;
     border-radius: 5px;
     transform: scale(0);
   }
 
-  .marvel__header {
+  .marvel-header {
     &.active .marvel__btn-burger::after {
       bottom: 7px;
       border-radius: 5px;

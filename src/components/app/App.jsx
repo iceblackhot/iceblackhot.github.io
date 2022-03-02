@@ -7,9 +7,10 @@ import {Games} from '../header/menu/games/games';
 import {Main} from '../header/menu/main/main';
 import {Movies} from '../header/menu/movies/movies';
 import {SignIn} from '../header/menu/signIn/signin';
-import {NotFoundPage} from '../header/menu/notFoundPage';
+import { NotFoundPage } from '../utils/notFoundPage';
 import {Context} from '../context';
 import {Footer} from '../footer/footer';
+
 
 function App() {
   return (

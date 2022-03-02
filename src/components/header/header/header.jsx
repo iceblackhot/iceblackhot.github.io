@@ -8,63 +8,63 @@ import './header.scss';
 function Header() {
   const [switchToggled, setSwitchToggled] = useState(false);
 
-  const classNameHeader = `marvel__header${switchToggled ? ' active' : ''}`;
-  const classNameNav = `comics-menu__nav${switchToggled ? ' active' : ''}`;
+  const classNameHeader = `marvel-header${switchToggled ? ' active' : ''}`;
+  const classNameNav = `marvel-header__nav${switchToggled ? ' active' : ''}`;
 
   return (
     <header className={classNameHeader}>
       <BurgerBtn switchToggled={switchToggled} setSwitchToggled={setSwitchToggled} />
       <nav className={classNameNav}>
-        <ul className="marvel__menu-list">
-          <li className="marvel__menu-item">
+        <ul className="marvel-header__list">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Main"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/'}
               onClick={switchToggled}>
               Main
             </NavLink>
           </li>
-          <li className="marvel__menu-item">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Comics"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/comics'}
               onClick={switchToggled}>
               Comics
             </NavLink>
           </li>
-          <li className="marvel__menu-item">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Heroes"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/heroes'}
               onClick={switchToggled}>
               Heroes
             </NavLink>
           </li>
-          <li className="marvel__menu-item">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Movies"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/movies'}
               onClick={switchToggled}>
               Movies
             </NavLink>
           </li>
-          <li className="marvel__menu-item">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Games"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/games'}
               onClick={switchToggled}>
               Games
             </NavLink>
           </li>
-          <li className="marvel__menu-item">
+          <li className="marvel-header__item">
             <NavLink
               data-name="Sign in"
-              className="marvel__menu-link"
+              className="marvel-header__link"
               to={'/signin'}
               onClick={switchToggled}>
               Sign in

@@ -1,6 +1,6 @@
 @import '../../../scss/vars';
 
-.marvel__header {
+.marvel-header {
   position: relative;
   display: flex;
   justify-content: center;
@@ -8,7 +8,7 @@
   height: 100px;
   background: linear-gradient(to right, #108cf1, #ff002b);
 
-  .marvel__menu-list {
+  &__list {
     display: flex;
     position: absolute;
     top: 10px;
@@ -19,87 +19,87 @@
     width: 100%;
     padding: 0 15px;
     text-align: center;
+  }
 
-    .marvel__menu-item {
-      flex-basis: 20%;
-    }
+  &__item {
+    flex-basis: 20%;
+  }
 
-    .marvel__menu-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px 15px;
-      font-size: 0px;
-      line-height: 26px;
-      color: #fff;
-      padding: 10px 0;
-      position: relative;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 0px;
+    line-height: 26px;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+  }
 
-      &:first-child {
-        margin-left: 0;
-      }
+  &__link:first-child {
+    margin-left: 0;
+  }
 
-      &:last-child {
-        border-right: 2px solid $black;
-      }
+  &__link:last-child {
+    border-right: 2px solid $black;
+  }
 
-      &::before {
-        content: attr(data-name);
-        position: absolute;
-        font-family: 'marvelbold', sans-serif;
-        font-weight: 700;
-        font-size: 26px;
-        color: $black;
-        left: 0;
-        top: 0;
-        width: 100%;
-        padding: 23px 0;
-        border: 2px solid $black;
-        background-color: $white;
-        transform: rotateX(90deg) translateY(46px);
-        transform-origin: 50% 100%;
-        transition-duration: 500ms;
-        transition-property: transform;
-      }
+  &__link::before {
+    content: attr(data-name);
+    position: absolute;
+    font-family: 'marvelbold', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: $black;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 23px 0;
+    border: 2px solid $black;
+    background-color: $white;
+    transform: rotateX(90deg) translateY(46px);
+    transform-origin: 50% 100%;
+    transition-duration: 500ms;
+    transition-property: transform;
+  }
 
-      &:hover::before {
-        transform: rotateX(0deg) translateY(0);
-      }
+  &__link:hover::before {
+    transform: rotateX(0deg) translateY(0);
+  }
 
-      &::after {
-        content: attr(data-name);
-        position: absolute;
-        font-family: 'marvelbold', sans-serif;
-        font-weight: 700;
-        font-size: 26px;
-        color: $white;
-        left: 0;
-        top: 0;
-        width: 100%;
-        padding: 23px 0;
-        background: linear-gradient(to right, #c48497, #ff002b);
-        border: 2px solid $black;
-        transform: rotateX(0deg) translateY(0);
-        transform-origin: 50% 0;
-        transition-duration: 500ms;
-        transition-property: transform;
-      }
+  &__link::after {
+    content: attr(data-name);
+    position: absolute;
+    font-family: 'marvelbold', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: $white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 23px 0;
+    background: linear-gradient(to right, #c48497, #ff002b);
+    border: 2px solid $black;
+    transform: rotateX(0deg) translateY(0);
+    transform-origin: 50% 0;
+    transition-duration: 500ms;
+    transition-property: transform;
+  }
 
-      &:hover::after {
-        transform: rotateX(90deg) translateY(-46px);
-      }
-    }
+  &__link:hover::after {
+    transform: rotateX(90deg) translateY(-46px);
   }
 }
-
+      
 @media (max-width: 768px) {
   //Create burger menu
 
-  .marvel__header {
+  .marvel-header {
     display: block;
     min-height: 75px;
 
-    & .marvel__menu-list {
+    &__list {
       display: none;
       visibility: hidden;
       flex-direction: column;
@@ -108,16 +108,16 @@
       padding: 0 2em;
     }
 
-    & .marvel__menu-list .marvel__menu-item {
+    &__item {
       flex-basis: 12%;
       margin-left: 0;
     }
-  }
+  }   
 }
 
 //Create mobile burger menu
 @media (max-width: 768px) {
-  .marvel__header {
+  .marvel-header {
     &.active {
       height: 100vh;
       position: fixed;
@@ -127,21 +127,20 @@
       bottom: 0;
       z-index: 100;
     }
-  }
 
-  .marvel__header .active .marvel__menu-list {
-    display: block;
-    visibility: visible;
-    position: absolute;
-    top: 74px;
-  }
+    &.active .marvel-header__list {
+      display: block;
+      visibility: visible;
+      position: absolute;
+      top: 6em;
+    }
 
-  .marvel__header .marvel__menu-list .marvel__menu-item {
-    padding-bottom: 40px;
-  }
+    &__item {
+      padding-bottom: 40px;
+    }
 
-  .marvel__header .marvel__menu-list .marvel__menu-link::before,
-  .marvel__header .marvel__menu-list .marvel__menu-link::after {
-    font-size: 40px;
-  }
+    &__link::after, &__link::before {
+      font-size: 40px;
+    }
+  } 
 }
