@@ -16,7 +16,8 @@ export const Heroes = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const result = await axios(process.env.REACT_APP_API);
+      // const result = await axios(process.env.REACT_APP_API);
+      const result = await axios('https://gateway.marvel.com:443/v1/public/characters?apikey=6561ba31823b9c8d4971690f8f768319')
       setHeroes(result.data.data.results);
       // console.log(result.data.data.results);
     };

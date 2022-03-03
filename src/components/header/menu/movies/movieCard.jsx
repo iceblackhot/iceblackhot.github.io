@@ -1,45 +1,52 @@
-import React, {useEffect, useRef} from 'react';
+/** @format */
 
-import {motion} from 'framer-motion';
+import React, { useEffect, useRef, useState } from "react";
 
-import VanillaTilt from 'vanilla-tilt';
+import { motion } from "framer-motion";
 
-import './movieCard.scss';
+import VanillaTilt from "vanilla-tilt";
+
+import "./movieCard.scss";
+
+import { Modal } from "../../modal/modal";
 
 function Tilt(props) {
-  const {options, ...rest} = props;
-  const tilt = useRef(null);
+	const { options, ...rest } = props;
+	const tilt = useRef(null);
 
-  useEffect(() => {
-    VanillaTilt.init(tilt.current, options);
-  }, [options]);
+	useEffect(() => {
+		VanillaTilt.init(tilt.current, options);
+	}, [options]);
 
-  return <div ref={tilt} {...rest} />;
+	return <div ref={tilt} {...rest} />;
 }
 
-export const Movie = ({movie}) => {
-  const options = {
-    scale: 0.9,
-    speed: 1000,
-    max: 30,
-    glare: true,
-  };
+export const Movie = ({ movie }) => {
+	const options = {
+		scale: 0.9,
+		speed: 1000,
+		max: 30,
+		glare: true,
+	};
 
-  return (
-    <Tilt className="movie__box" options={options}>
-      <motion.div layout className="movie__card">
-        <div className="movie__img-holder">
-          <img
-            className="movie__img"
-            src={'https://image.tmdb.org/t/p/w500' + movie.backdrop_path}
-            alt=""
-          />
-        </div>
-        <div className="movie__text-holder">
-          <h2>{movie.title}</h2>
-          <p>{movie.overview}</p>
-        </div>
-      </motion.div>
-    </Tilt>
-  );
+  const [modalActive, setModalActive] = useState(true);
+
+	return (
+		<Tilt className="movie__box" options={options}>
+			<motion.div layout className="movie__card">
+      <Modal modalActive={modalActive} setModalActive={setModalActive}/>
+				<div className="movie__img-holder" >
+					<img
+						className="movie__img"
+						src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
+						alt=""
+					/>
+				</div>
+				<div className="movie__text-holder">
+					<h2>{movie.title}</h2>
+					<p>{movie.overview}</p>
+				</div>
+			</motion.div>
+		</Tilt>
+	);
 };
