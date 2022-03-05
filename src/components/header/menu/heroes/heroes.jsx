@@ -1,15 +1,39 @@
+/** @format */
+
 import React, {useEffect, useState} from 'react';
 
 import axios from 'axios';
 
 import './heroes.scss';
+
 import {Preloader} from '../../../preloader/preloader';
+
 import {ButtonUp} from '../buttonUp/buttonUp';
+
+import {API_KEY, API_URL, URL_HEROES} from '../../../utils/constants/api';
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from '@mui/material';
 
 export const Heroes = () => {
   const [heroes, setHeroes] = useState([]);
   const [line, setLine] = useState('');
   const [switchToggled, setSwitchToggled] = useState(false);
+
+  const [openDial, setOpenDial] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpenDial(true);
+  };
+
+  const handleClose = () => {
+    setOpenDial(false);
+  };
 
   const ToggleSwitch = () => setSwitchToggled(!switchToggled);
   const classSearchActive = `marvel-heroes__search-holder${switchToggled ? ' active' : ''}`;
@@ -17,9 +41,11 @@ export const Heroes = () => {
   useEffect(() => {
     const fetch = async () => {
       // const result = await axios(process.env.REACT_APP_API);
-      const result = await axios('https://gateway.marvel.com:443/v1/public/characters?apikey=6561ba31823b9c8d4971690f8f768319')
+      const result = await axios(API_URL + URL_HEROES + API_KEY).catch((error) =>
+        console.log(error.message),
+      );
       setHeroes(result.data.data.results);
-      // console.log(result.data.data.results);
+      console.log(result.data.data.results);
     };
     fetch();
   }, []);
@@ -58,13 +84,9 @@ export const Heroes = () => {
               </div>
               <div className="marvel-heroes__text-holder">
                 <h2>{per.name}</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi esse
-                  laboriosam officia autem dolor magni voluptates eveniet, excepturi dolore
-                  molestias, veniam, quam quo! Temporibus odit explicabo nesciunt blanditiis itaque?
-                </p>
+                <p>{per.description}</p>
               </div>
-              <a className="marvel-button" href={per.urls[0].url}>
+              <a className="marvel-button" onClick={handleClickOpen}>
                 <span className="marvel-button__line marvel-button__line-top"></span>
                 <span className="marvel-button__line marvel-button__line-right"></span>
                 <span className="marvel-button__line marvel-button__line-bottom"></span>
@@ -75,6 +97,26 @@ export const Heroes = () => {
           ))}
         </div>
       </div>
+      <Dialog
+        open={openDial}
+        onClose={handleClose}
+        PaperProps={{
+          style: {
+            borderRadius: '0',
+          },
+        }}>
+        <DialogTitle id="alert-dialog-title">{'HERO INFO'}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo est asperiores
+            soluta numquam possimus odit, nesciunt at ducimus laboriosam dolorum voluptatibus vel
+            provident voluptatem fuga incidunt enim eius voluptates!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
       <ButtonUp />
     </section>
   );

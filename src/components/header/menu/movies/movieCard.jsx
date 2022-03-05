@@ -29,13 +29,12 @@ export const Movie = ({ movie }) => {
 		glare: true,
 	};
 
-  const [modalActive, setModalActive] = useState(true);
+	const [modalActive, setModalActive] = useState(true);
 
 	return (
 		<Tilt className="movie__box" options={options}>
 			<motion.div layout className="movie__card">
-      <Modal modalActive={modalActive} setModalActive={setModalActive}/>
-				<div className="movie__img-holder" >
+				<div className="movie__img-holder">
 					<img
 						className="movie__img"
 						src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path}
