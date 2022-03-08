@@ -38,6 +38,8 @@ export const Heroes = () => {
   const ToggleSwitch = () => setSwitchToggled(!switchToggled);
   const classSearchActive = `marvel-heroes__search-holder${switchToggled ? ' active' : ''}`;
 
+  const marvLink = 'https://www.marvel.com/characters';
+
   useEffect(() => {
     const fetch = async () => {
       // const result = await axios(process.env.REACT_APP_API);
@@ -105,16 +107,15 @@ export const Heroes = () => {
             borderRadius: '0',
           },
         }}>
-        <DialogTitle id="alert-dialog-title">{'HERO INFO'}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{'MORE INFO'}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor explicabo est asperiores
-            soluta numquam possimus odit, nesciunt at ducimus laboriosam dolorum voluptatibus vel
-            provident voluptatem fuga incidunt enim eius voluptates!
+            You can find more information about the heroes on the official Marvel website!
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Close</Button>
+          <Button onClick={() => window.open(marvLink)}>Show More</Button>
         </DialogActions>
       </Dialog>
       <ButtonUp />

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Preloader} from '../../../preloader/preloader';
+import {ButtonUp} from '../buttonUp/buttonUp';
 import {Avangers} from './avangers/avangers';
 import {IronMan} from './ironMan';
 
@@ -25,6 +26,7 @@ export const Main = () => {
           <SlickSlider />
           <IronMan />
           <Avangers />
+          <ButtonUp />
         </>
       )}
     </>
