@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Context} from '../../context';
 
 import './burgerBtn.scss';
 
-function BurgerBtn({switchToggled, setSwitchToggled}) {
-  const ToggleSwitch = () => setSwitchToggled(!switchToggled);
+function BurgerBtn() {
+  const {switchToggled, ToggleSwitch} = useContext(Context);
 
   const classNameBtn = `marvel__btn-burger${switchToggled ? ' active' : ''}`;
 

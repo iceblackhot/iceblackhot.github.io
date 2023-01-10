@@ -75,7 +75,7 @@
 
   &__title {
     position: absolute;
-    top: 4.5em;
+    top: 120px;
     text-align: center;
     padding: 0 15px 30px;
     color: $white;
@@ -109,7 +109,7 @@
     transition: ease-in-out 0.5s;
     overflow: hidden;
 
-    &__form-holder {
+    & .signin__form-holder {
       transition-delay: 1.25s;
     }
 
@@ -120,7 +120,7 @@
         left: -100%;
       }
 
-      &__form-holder {
+      .signin__form-holder {
         left: -100%;
         transition-delay: 0s;
       }
@@ -183,11 +183,6 @@
 }
 
 @media (max-width: 991px) {
-  .signin__title {
-    top: 5.5em;
-    font-size: $titleh2;
-  }
-
   .signin__container {
     max-width: 400px;
     height: 650px;
@@ -227,8 +222,12 @@
 }
 
 @media (max-width: 450px) {
+  .marvel__header {
+    height: 75px;
+  }
+
   .signin__title {
-        top: 5.5em;
+    top: 85px;
     font-size: $titleh2;
   }
 
@@ -237,13 +236,13 @@
     height: 550px;
 
     .signin__form-box {
-      height: 70%;
+      height: 65%;
       top: 25px;
     }
 
     .signin__blue-bg {
-      top: 25px;
-      height: 92%;
+      top: 25;
+      height: 97%;
     }
   }
 }

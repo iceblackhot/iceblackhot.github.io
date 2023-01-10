@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
-
+import {Link} from 'react-router-dom';
 import './signIn.scss';
-
-// import bg from '../../../assets/avengers-full-bg.png';
 
 export const SignIn = () => {
   const [switchToggled, setSwitchToggled] = useState(false);
@@ -45,9 +43,9 @@ export const SignIn = () => {
                   placeholder="Password"
                 />
                 <input className="signin__login signin__input" type="submit" value="Login" />
-                <a href={''} className="signin__forgot">
+                <Link to={''} className="signin__forgot">
                   Forgot Password ?
-                </a>
+                </Link>
               </form>
             </div>
             <div className="signup__form-holder form-holder">

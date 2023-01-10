@@ -57,7 +57,7 @@
   .marvel-heroes__search-holder {
     position: absolute;
     z-index: 1;
-    top: 31%;
+    top: 24%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80px;
@@ -262,7 +262,7 @@
 @media (max-width: 768px) {
   .marvel-heroes__search-holder {
     &.active {
-      max-width: 100%;
+      max-width: 80%;
       display: flex;
     }
 
@@ -271,4 +271,3 @@
     }
   }
 }
-

@@ -43,7 +43,7 @@ function Filter({setActiveGenre, activeGenre, setFiltered, popular}) {
         <span className="marvel-button__line marvel-button__line-left"></span>
         Adventures
       </button>
-               </div>
+    </div>
   );
 }
 

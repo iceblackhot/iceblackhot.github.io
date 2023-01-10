@@ -106,7 +106,7 @@ export const IronMan = () => {
       </section>
 
       <div className="ironman-fly__text-holder">
-        <div className="ironman-fly__content">
+        <div className="content">
           <h2>
             <span id="text">I AM IRON MAN</span>
           </h2>

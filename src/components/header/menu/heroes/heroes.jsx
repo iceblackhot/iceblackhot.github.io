@@ -1,55 +1,27 @@
-/** @format */
-
 import React, {useEffect, useState} from 'react';
-
 import axios from 'axios';
-
-import './heroes.scss';
-
 import {Preloader} from '../../../preloader/preloader';
-
 import {ButtonUp} from '../buttonUp/buttonUp';
-
-import {API_KEY, API_URL, URL_HEROES} from '../../../utils/constants/api';
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from '@mui/material';
+import './heroes.scss';
 
 export const Heroes = () => {
   const [heroes, setHeroes] = useState([]);
   const [line, setLine] = useState('');
   const [switchToggled, setSwitchToggled] = useState(false);
 
-  const [openDial, setOpenDial] = useState(false);
-
-  const handleClickOpen = () => {
-    setOpenDial(true);
-  };
-
-  const handleClose = () => {
-    setOpenDial(false);
-  };
-
   const ToggleSwitch = () => setSwitchToggled(!switchToggled);
   const classSearchActive = `marvel-heroes__search-holder${switchToggled ? ' active' : ''}`;
 
-  const marvLink = 'https://www.marvel.com/characters';
-
   useEffect(() => {
-    const fetch = async () => {
-      // const result = await axios(process.env.REACT_APP_API);
-      const result = await axios(API_URL + URL_HEROES + API_KEY).catch((error) =>
-        console.log(error.message),
+    const getHeroes = async () => {
+      // const result = await axios.get(process.env.REACT_APP_MARVEL_API);
+      const result = await axios.get(
+        'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=6561ba31823b9c8d4971690f8f768319&hash=bd1a6f9fdc8d4c978e95b4115ec1ae4b&limit=20',
       );
+      // console.log(result.data.data.results);
       setHeroes(result.data.data.results);
-      console.log(result.data.data.results);
     };
-    fetch();
+    getHeroes();
   }, []);
 
   if (!heroes.length) return <Preloader />;
@@ -86,9 +58,13 @@ export const Heroes = () => {
               </div>
               <div className="marvel-heroes__text-holder">
                 <h2>{per.name}</h2>
-                <p>{per.description}</p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti sequi esse
+                  laboriosam officia autem dolor magni voluptates eveniet, excepturi dolore
+                  molestias, veniam, quam quo! Temporibus odit explicabo nesciunt blanditiis itaque?
+                </p>
               </div>
-              <a className="marvel-button" onClick={handleClickOpen}>
+              <a className="marvel-button" href={per.urls[0].url}>
                 <span className="marvel-button__line marvel-button__line-top"></span>
                 <span className="marvel-button__line marvel-button__line-right"></span>
                 <span className="marvel-button__line marvel-button__line-bottom"></span>
@@ -99,25 +75,6 @@ export const Heroes = () => {
           ))}
         </div>
       </div>
-      <Dialog
-        open={openDial}
-        onClose={handleClose}
-        PaperProps={{
-          style: {
-            borderRadius: '0',
-          },
-        }}>
-        <DialogTitle id="alert-dialog-title">{'MORE INFO'}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            You can find more information about the heroes on the official Marvel website!
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
-          <Button onClick={() => window.open(marvLink)}>Show More</Button>
-        </DialogActions>
-      </Dialog>
       <ButtonUp />
     </section>
   );
