@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ab243ab7.css",
+    "main.js": "/static/js/main.06dcf6e9.js",
+    "static/media/3.png": "/static/media/3.b20e27bf8f7582d299ad.png",
+    "static/media/cloud1.png": "/static/media/cloud1.e9d09303e966eedb5607.png",
+    "static/media/2.jpg": "/static/media/2.396b33909ef72e4e28c9.jpg",
+    "static/media/cap.png": "/static/media/cap.7301c300a046b48b4c59.png",
+    "static/media/bg.jpg": "/static/media/bg.01b402771e0bfd6b81cd.jpg",
+    "static/media/ironman07.png": "/static/media/ironman07.94272ab3b2afed7b5dc0.png",
+    "static/media/5.jpg": "/static/media/5.b8b125cda77d7e86a580.jpg",
+    "static/media/4.jpg": "/static/media/4.03d04f3dfe48c37c2181.jpg",
+    "static/media/1.jpg": "/static/media/1.15838202592d1144f198.jpg",
+    "static/media/cloud2.png": "/static/media/cloud2.36894f14d1c3be59b9b2.png",
+    "static/media/jet.png": "/static/media/jet.a1c1f0bf47568dda96a7.png",
+    "static/media/ironman.jpg": "/static/media/ironman.02136f43b7f78a33c8f1.jpg",
+    "static/media/moon.png": "/static/media/moon.96f48caa7ba95e4b48c5.png",
+    "static/media/deadpool-ooops.jpg": "/static/media/deadpool-ooops.150984b9c0240c5c176c.jpg",
+    "static/media/thor.jpg": "/static/media/thor.bbcc42e4187369f55948.jpg",
+    "static/media/marvel-italic-webfont.woff": "/static/media/marvel-italic-webfont.a047fc3d4159c2848bc5.woff",
+    "static/media/marvel-bolditalic-webfont.woff": "/static/media/marvel-bolditalic-webfont.74908dcf2790511c7814.woff",
+    "static/media/marvel-bold-webfont.woff": "/static/media/marvel-bold-webfont.b720e3c6c7b654c4abf4.woff",
+    "static/media/marvel-regular-webfont.woff": "/static/media/marvel-regular-webfont.e350bdcb8b16436e194d.woff",
+    "static/media/prelod.gif": "/static/media/prelod.949809d5ac7d7d09ee72.gif",
+    "static/media/marvel-bolditalic-webfont.woff2": "/static/media/marvel-bolditalic-webfont.d3e3e0389e5ff35c1fd6.woff2",
+    "static/media/marvel-italic-webfont.woff2": "/static/media/marvel-italic-webfont.ed288b4ca07c4fac1298.woff2",
+    "static/media/marvel-bold-webfont.woff2": "/static/media/marvel-bold-webfont.f8d8ed3023ca62174b18.woff2",
+    "static/media/marvel-regular-webfont.woff2": "/static/media/marvel-regular-webfont.960b0db9e6c96e2e096a.woff2",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.ab243ab7.css.map": "/static/css/main.ab243ab7.css.map",
+    "main.06dcf6e9.js.map": "/static/js/main.06dcf6e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab243ab7.css",
+    "static/js/main.06dcf6e9.js"
+  ]
+}
