@@ -1,6 +1,6 @@
 ## React Marvel App
 
-- This is SRC code of project. To run the application you need:
+- This is SRC code of project(test branch). To run the application you need:
 - download code & open it in VSCode
 
 ## run Scripts:
